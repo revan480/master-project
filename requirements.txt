@@ -1,0 +1,52 @@
+# Master Project: Causal Discovery for Predictive Maintenance
+# Python 3.9-3.10 recommended (causalnex compatibility)
+# Python 3.11+ works but requires manual Dynotears implementation
+
+# Core data processing
+pandas>=1.5.0
+numpy>=1.23.0
+scipy>=1.9.0
+
+# Machine learning utilities
+scikit-learn>=1.1.0
+
+# Statistical modeling
+statsmodels>=0.13.0
+
+# Causal discovery libraries
+tigramite>=5.2.0        # PCMCI+ and related algorithms
+lingam>=1.7.0           # VarLiNGAM and LiNGAM variants
+# causalnex>=0.12.0     # Dynotears - COMMENTED OUT: requires Python <3.11
+                        # For Python 3.11+, Dynotears is implemented manually
+
+# Graph operations
+networkx>=2.8.0
+# pygraphviz>=1.9       # COMMENTED OUT: requires system dependencies (graphviz)
+                        # Install manually if needed: conda install pygraphviz
+
+# Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+plotly>=5.10.0
+
+# Jupyter support
+jupyter>=1.0.0
+jupyterlab>=3.5.0
+notebook>=6.5.0
+ipykernel>=6.17.0
+
+# Progress tracking
+tqdm>=4.64.0
+
+# Configuration and CLI
+pyyaml>=6.0
+click>=8.1.0
+
+# Testing (development)
+pytest>=7.2.0
+pytest-cov>=4.0.0
+
+# Code quality (development)
+black>=22.10.0
+flake8>=5.0.0
+isort>=5.10.0
