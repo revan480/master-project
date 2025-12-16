@@ -1,7 +1,7 @@
 # Master Project: Causal Discovery for Predictive Maintenance
 # Multi-stage build optimized for caching
 
-FROM python:3.9-slim as base
+FROM python:3.9-slim AS base
 
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1 \
@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # ============================================
 # Dependencies stage - cached separately
 # ============================================
-FROM base as dependencies
+FROM base AS dependencies
 
 # Copy only requirements first (for better caching)
 COPY requirements.txt .
@@ -50,7 +50,7 @@ RUN pip install --no-cache-dir \
 # Causal discovery libraries (these take longer)
 RUN pip install --no-cache-dir tigramite>=5.2.0
 RUN pip install --no-cache-dir lingam>=1.7.0
-RUN pip install --no-cache-dir causalnex>=0.12.0
+RUN pip install --no-cache-dir gcastle torch --extra-index-url https://download.pytorch.org/whl/cpu
 
 # Visualization and utilities
 RUN pip install --no-cache-dir \
@@ -60,23 +60,17 @@ RUN pip install --no-cache-dir \
     pyyaml>=6.0 \
     click>=8.1.0
 
-# Jupyter support
-RUN pip install --no-cache-dir \
-    jupyter>=1.0.0 \
-    jupyterlab>=3.5.0 \
-    notebook>=6.5.0 \
-    ipykernel>=6.17.0
 
 # ============================================
 # Final stage
 # ============================================
-FROM dependencies as final
+FROM dependencies AS final
 
 # Create non-root user for security
 RUN useradd --create-home --shell /bin/bash appuser
 
 # Create necessary directories
-RUN mkdir -p /app/data/raw /app/data/processed /app/results /app/notebooks \
+RUN mkdir -p /app/data/raw /app/data/processed /app/results \
     && chown -R appuser:appuser /app
 
 # Copy source code
@@ -84,9 +78,6 @@ COPY --chown=appuser:appuser . .
 
 # Switch to non-root user
 USER appuser
-
-# Expose Jupyter port
-EXPOSE 8888
 
 # Default command
 CMD ["python", "-m", "src.algorithms.algorithm_runner", "--help"]

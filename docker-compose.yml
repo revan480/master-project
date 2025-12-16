@@ -1,56 +1,4 @@
-version: '3.8'
-
 services:
-  # Main application service
-  app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: pdm_causal_discovery
-    volumes:
-      # Mount source code for development
-      - ./src:/app/src:ro
-      # Mount data directories (read-write for processing)
-      - ./data/raw:/app/data/raw:ro
-      - ./data/processed:/app/data/processed:rw
-      # Mount results directory
-      - ./results:/app/results:rw
-      # Mount notebooks
-      - ./notebooks:/app/notebooks:rw
-    environment:
-      - PYTHONPATH=/app
-      - PYTHONUNBUFFERED=1
-    working_dir: /app
-    # Default: show help
-    command: ["python", "-m", "src.algorithms.algorithm_runner", "--help"]
-
-  # Jupyter notebook service
-  jupyter:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: pdm_jupyter
-    ports:
-      - "8888:8888"
-    volumes:
-      - ./src:/app/src:rw
-      - ./data/raw:/app/data/raw:ro
-      - ./data/processed:/app/data/processed:rw
-      - ./results:/app/results:rw
-      - ./notebooks:/app/notebooks:rw
-    environment:
-      - PYTHONPATH=/app
-      - JUPYTER_ENABLE_LAB=yes
-    working_dir: /app
-    command: >
-      jupyter lab
-      --ip=0.0.0.0
-      --port=8888
-      --no-browser
-      --allow-root
-      --NotebookApp.token=''
-      --NotebookApp.password=''
-
   # Preprocessing service
   preprocess:
     build:
@@ -74,7 +22,6 @@ services:
     container_name: pdm_algorithms
     volumes:
       - ./src:/app/src:ro
-      - ./data/processed:/app/data/processed:ro
       - ./results:/app/results:rw
     environment:
       - PYTHONPATH=/app
