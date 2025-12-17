@@ -74,3 +74,9 @@ htmlcov/
 
 # Docker
 *.tar
+
+# Personal figure generators (not part of core project)
+generate_paper_figures.py
+generate_extra_figures.py
+paper_figures/
+results/figures/

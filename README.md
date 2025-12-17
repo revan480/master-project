@@ -57,9 +57,6 @@ python -m src.analysis.stability_calculator
 
 # Step 4: Generate figures
 python -m src.visualization.plot_results
-
-# Step 5: Generate publication figures (Springer format)
-python generate_paper_figures.py
 ```
 
 ### Docker
@@ -83,11 +80,7 @@ docker compose up --build
 ├── results/
 │   ├── causal_graphs/          # Per-machine JSON outputs (100 files)
 │   ├── stability_scores/       # Stability analysis CSVs
-│   ├── figures/                # Colorful visualizations (8 figures)
 │   └── PROJECT_SUMMARY.md      # Detailed results summary
-├── paper_figures/              # Publication-quality figures (Springer format)
-├── generate_paper_figures.py   # Grayscale figures for paper
-├── generate_extra_figures.py   # Colorful figures for presentations
 ├── Dockerfile
 ├── docker-compose.yml
 └── requirements.txt

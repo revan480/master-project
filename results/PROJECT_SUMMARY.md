@@ -83,21 +83,7 @@ results/
 │   ├── high_confidence_edges.csv
 │   ├── algorithm_agreement.csv # Jaccard similarity matrix
 │   └── summary_report.json     # Complete statistics
-├── figures/                    # Colorful visualizations
-│   ├── extra_algorithm_overview.png
-│   ├── extra_stability_distribution.png
-│   ├── extra_agreement_heatmap.png
-│   ├── extra_pdm_causal_chain.png
-│   ├── extra_edge_type_breakdown.png
-│   ├── extra_top_edges_table.png
-│   ├── extra_algorithm_ranking.png
-│   └── extra_summary_infographic.png
 └── PROJECT_SUMMARY.md          # This file
-
-paper_figures/                  # Publication-quality (Springer format)
-├── fig1_algorithm_agreement.png/pdf
-├── fig2_algorithm_comparison.png/pdf
-└── fig3_causal_network.png/pdf
 ```
 
 ## Reproducibility
@@ -107,9 +93,7 @@ paper_figures/                  # Publication-quality (Springer format)
 python -m src.preprocessing.data_merger              # Step 1: Preprocess data
 python -m src.algorithms.algorithm_runner --all --parallel --workers 8  # Step 2: Run algorithms
 python -m src.analysis.stability_calculator          # Step 3: Calculate stability
-python -m src.visualization.plot_results             # Step 4: Generate basic figures
-python generate_paper_figures.py                     # Step 5: Publication figures
-python generate_extra_figures.py                     # Step 6: Colorful figures
+python -m src.visualization.plot_results             # Step 4: Generate figures
 ```
 
 ## Citation
