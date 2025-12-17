@@ -54,11 +54,11 @@
       "max_stability": 100.0
     },
     "VarLiNGAM": {
-      "total_edges": 750,
+      "total_edges": 749,
       "high_stability_edges": 19,
-      "medium_stability_edges": 10,
-      "low_stability_edges": 721,
-      "avg_stability": 8.869333333333334,
+      "medium_stability_edges": 13,
+      "low_stability_edges": 717,
+      "avg_stability": 8.813084112149532,
       "max_stability": 100.0
     },
     "PCMCI+": {
@@ -72,17 +72,17 @@
     "PCGCE": {
       "total_edges": 899,
       "high_stability_edges": 52,
-      "medium_stability_edges": 40,
-      "low_stability_edges": 807,
-      "avg_stability": 20.71635150166852,
+      "medium_stability_edges": 38,
+      "low_stability_edges": 809,
+      "avg_stability": 20.723025583982203,
       "max_stability": 100.0
     },
     "Dynotears": {
-      "total_edges": 235,
-      "high_stability_edges": 72,
-      "medium_stability_edges": 39,
-      "low_stability_edges": 124,
-      "avg_stability": 47.638297872340424,
+      "total_edges": 237,
+      "high_stability_edges": 71,
+      "medium_stability_edges": 40,
+      "low_stability_edges": 126,
+      "avg_stability": 47.278481012658226,
       "max_stability": 100.0
     },
     "TiMINo": {
@@ -102,11 +102,11 @@
       "max_stability": 100.0
     },
     "NBCB-e": {
-      "total_edges": 451,
+      "total_edges": 443,
       "high_stability_edges": 10,
-      "medium_stability_edges": 12,
-      "low_stability_edges": 429,
-      "avg_stability": 9.412416851441241,
+      "medium_stability_edges": 11,
+      "low_stability_edges": 422,
+      "avg_stability": 9.591422121896162,
       "max_stability": 100.0
     },
     "CBNB-w": {
@@ -118,11 +118,11 @@
       "max_stability": 100.0
     },
     "CBNB-e": {
-      "total_edges": 446,
+      "total_edges": 429,
       "high_stability_edges": 10,
       "medium_stability_edges": 10,
-      "low_stability_edges": 426,
-      "avg_stability": 9.45067264573991,
+      "low_stability_edges": 409,
+      "avg_stability": 9.857808857808857,
       "max_stability": 100.0
     }
   },
@@ -161,23 +161,23 @@
         "stability": 100.0
       },
       {
-        "source": "vibration_max",
-        "target": "vibration_mean",
-        "stability": 100.0
-      },
-      {
-        "source": "vibration_mean",
-        "target": "vibration_mean",
-        "stability": 100.0
-      },
-      {
-        "source": "rotate_mean",
+        "source": "rotate_max",
         "target": "rotate_mean",
         "stability": 100.0
       },
       {
-        "source": "volt_max",
-        "target": "volt_mean",
+        "source": "rotate_min",
+        "target": "rotate_mean",
+        "stability": 100.0
+      },
+      {
+        "source": "pressure_mean",
+        "target": "pressure_mean",
+        "stability": 100.0
+      },
+      {
+        "source": "pressure_max",
+        "target": "pressure_mean",
         "stability": 100.0
       }
     ],
@@ -210,28 +210,28 @@
     ],
     "PCGCE": [
       {
-        "source": "volt_std",
-        "target": "volt_min",
-        "stability": 100.0
-      },
-      {
-        "source": "volt_mean",
-        "target": "volt_min",
-        "stability": 100.0
-      },
-      {
         "source": "volt_mean",
         "target": "volt_max",
         "stability": 100.0
       },
       {
-        "source": "pressure_std",
-        "target": "pressure_min",
+        "source": "pressure_min",
+        "target": "pressure_max",
         "stability": 100.0
       },
       {
-        "source": "pressure_mean",
-        "target": "pressure_max",
+        "source": "pressure_min",
+        "target": "pressure_mean",
+        "stability": 100.0
+      },
+      {
+        "source": "pressure_min",
+        "target": "pressure_std",
+        "stability": 100.0
+      },
+      {
+        "source": "vibration_max",
+        "target": "vibration_min",
         "stability": 100.0
       }
     ],
@@ -257,8 +257,8 @@
         "stability": 100.0
       },
       {
-        "source": "rotate_std",
-        "target": "rotate_min",
+        "source": "pressure_std",
+        "target": "pressure_mean",
         "stability": 100.0
       }
     ],
@@ -323,11 +323,6 @@
         "stability": 100.0
       },
       {
-        "source": "volt_max",
-        "target": "volt_mean",
-        "stability": 100.0
-      },
-      {
         "source": "pressure_max",
         "target": "pressure_mean",
         "stability": 100.0
@@ -338,8 +333,13 @@
         "stability": 100.0
       },
       {
-        "source": "rotate_max",
-        "target": "rotate_mean",
+        "source": "pressure_min",
+        "target": "pressure_mean",
+        "stability": 100.0
+      },
+      {
+        "source": "volt_max",
+        "target": "volt_mean",
         "stability": 100.0
       }
     ],
@@ -377,22 +377,22 @@
         "stability": 100.0
       },
       {
+        "source": "volt_max",
+        "target": "volt_mean",
+        "stability": 100.0
+      },
+      {
         "source": "rotate_max",
         "target": "rotate_mean",
         "stability": 100.0
       },
       {
-        "source": "vibration_min",
-        "target": "vibration_mean",
+        "source": "rotate_min",
+        "target": "rotate_mean",
         "stability": 100.0
       },
       {
         "source": "pressure_max",
-        "target": "pressure_mean",
-        "stability": 100.0
-      },
-      {
-        "source": "pressure_min",
         "target": "pressure_mean",
         "stability": 100.0
       }
@@ -445,17 +445,8 @@
       "min_stability": 76.0
     },
     {
-      "source": "vibration_max",
-      "target": "vibration_mean",
-      "num_algorithms": 4,
-      "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
-      "avg_stability": 100.0,
-      "max_stability": 100.0,
-      "min_stability": 100.0
-    },
-    {
-      "source": "volt_max",
-      "target": "volt_mean",
+      "source": "rotate_max",
+      "target": "rotate_mean",
       "num_algorithms": 4,
       "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
       "avg_stability": 100.0,
@@ -472,8 +463,17 @@
       "min_stability": 100.0
     },
     {
-      "source": "rotate_max",
-      "target": "rotate_mean",
+      "source": "vibration_max",
+      "target": "vibration_mean",
+      "num_algorithms": 4,
+      "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
+      "avg_stability": 100.0,
+      "max_stability": 100.0,
+      "min_stability": 100.0
+    },
+    {
+      "source": "volt_max",
+      "target": "volt_mean",
       "num_algorithms": 4,
       "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
       "avg_stability": 100.0,
@@ -494,16 +494,7 @@
       "target": "pressure_mean",
       "num_algorithms": 4,
       "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
-      "avg_stability": 99.5,
-      "max_stability": 100.0,
-      "min_stability": 99.0
-    },
-    {
-      "source": "vibration_min",
-      "target": "vibration_mean",
-      "num_algorithms": 4,
-      "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
-      "avg_stability": 99.5,
+      "avg_stability": 99.75,
       "max_stability": 100.0,
       "min_stability": 99.0
     },
@@ -526,6 +517,15 @@
       "min_stability": 99.0
     },
     {
+      "source": "vibration_min",
+      "target": "vibration_mean",
+      "num_algorithms": 4,
+      "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
+      "avg_stability": 99.25,
+      "max_stability": 100.0,
+      "min_stability": 99.0
+    },
+    {
       "source": "pressure_mean",
       "target": "pressure_min",
       "num_algorithms": 4,
@@ -535,19 +535,19 @@
       "min_stability": 98.0
     },
     {
-      "source": "volt_min",
-      "target": "volt_mean",
-      "num_algorithms": 4,
-      "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
-      "avg_stability": 98.75,
-      "max_stability": 100.0,
-      "min_stability": 98.0
-    },
-    {
       "source": "vibration_mean",
       "target": "vibration_mean",
       "num_algorithms": 4,
       "algorithms": "VarLiNGAM, PCMCI+, NBCB-w, CBNB-w",
+      "avg_stability": 98.5,
+      "max_stability": 100.0,
+      "min_stability": 98.0
+    },
+    {
+      "source": "volt_min",
+      "target": "volt_mean",
+      "num_algorithms": 4,
+      "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
       "avg_stability": 98.5,
       "max_stability": 100.0,
       "min_stability": 98.0
@@ -584,18 +584,27 @@
       "target": "failure_comp2",
       "num_algorithms": 4,
       "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
-      "avg_stability": 89.25,
-      "max_stability": 92.0,
-      "min_stability": 88.0
+      "avg_stability": 90.25,
+      "max_stability": 94.0,
+      "min_stability": 89.0
     },
     {
       "source": "maint_comp1",
       "target": "failure_comp1",
       "num_algorithms": 4,
       "algorithms": "VarLiNGAM, PCGCE, NBCB-e, CBNB-e",
-      "avg_stability": 83.0,
-      "max_stability": 86.0,
-      "min_stability": 82.0
+      "avg_stability": 83.25,
+      "max_stability": 87.0,
+      "min_stability": 81.0
+    },
+    {
+      "source": "volt_std",
+      "target": "volt_max",
+      "num_algorithms": 3,
+      "algorithms": "VarLiNGAM, PCGCE, Dynotears",
+      "avg_stability": 90.33333333333333,
+      "max_stability": 100.0,
+      "min_stability": 71.0
     },
     {
       "source": "error3_count",
@@ -611,8 +620,8 @@
       "target": "maint_comp2",
       "num_algorithms": 3,
       "algorithms": "PCGCE, NBCB-w, CBNB-w",
-      "avg_stability": 86.0,
-      "max_stability": 92.0,
+      "avg_stability": 85.66666666666667,
+      "max_stability": 91.0,
       "min_stability": 83.0
     },
     {

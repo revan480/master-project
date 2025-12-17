@@ -1,225 +1,122 @@
-# Causal Discovery for Predictive Maintenance
-## Master's project Results Summary
+# Project Summary: Causal Discovery for Predictive Maintenance
 
----
+## Overview
 
-## Executive Summary
+This project applies 10 causal discovery algorithms to the Azure Predictive Maintenance dataset to identify causal relationships between sensor readings, error events, component failures, and maintenance actions. Since no ground truth exists, we use **stability-based validation**: running each algorithm on 100 machines and measuring how consistently edges appear across machines.
 
-This research applies **10 causal discovery algorithms** to the **Azure Predictive Maintenance dataset** to identify causal relationships that can predict machine failures. Using a **stability-based validation approach** across 100 machines, we discovered high-confidence causal edges that reveal actionable insights for predictive maintenance.
+## Experimental Setup
 
-### Key Achievements
+- **Dataset**: Azure Predictive Maintenance (Kaggle)
+- **Machines**: 100 industrial machines
+- **Time span**: ~1 year (365 days per machine)
+- **Variables**: 30 time series features per machine
+  - 16 sensor statistics (volt, rotate, pressure, vibration - mean/std/min/max)
+  - 5 error counts (error1-error5)
+  - 4 failure indicators (comp1-comp4)
+  - 4 maintenance indicators (comp1-comp4)
+  - 1 machine age
 
-| Metric | Value |
-|--------|-------|
-| Total Algorithm Runs | **1,000** (100 machines x 10 algorithms) |
-| Machines Analyzed | **100** |
-| Variables per Machine | **30** |
-| Time Series Length | **366 observations** per machine |
-| Total Execution Time | **~22 minutes** (8 parallel workers) |
-| Non-trivial Edges Discovered | **499** |
-| High-Confidence Edges (>=80% stability) | **72** (Dynotears) |
+## Algorithms Evaluated
 
----
+| Algorithm | Type | Library | Edges Found | High-Stability (>=70%) | Avg Stability |
+|-----------|------|---------|-------------|------------------------|---------------|
+| GCMVL | Granger Causality | statsmodels | 96 | 3 | 12.8% |
+| VarLiNGAM | Non-Gaussian | lingam | 749 | 19 | 8.8% |
+| PCMCI+ | Constraint-based | tigramite | 813 | 7 | 12.2% |
+| PCGCE | Constraint-based | tigramite | 899 | 52 | 20.7% |
+| **Dynotears** | Score-based | gcastle | 237 | **71** | **47.3%** |
+| TiMINo | Time series | custom | 870 | 0 | 50.0% |
+| NBCB-w | Hybrid | custom | 809 | 16 | 13.4% |
+| NBCB-e | Hybrid | custom | 443 | 10 | 9.6% |
+| CBNB-w | Hybrid | custom | 809 | 16 | 13.4% |
+| CBNB-e | Hybrid | custom | 429 | 10 | 9.9% |
 
-## Algorithm Performance Comparison
-
-| Algorithm | Avg Edges | Avg Time (s) | High Stability Edges | Avg Stability (%) |
-|-----------|-----------|--------------|---------------------|-------------------|
-| GCMVL | 12.3 | 42.5 | 3 | 12.8 |
-| VarLiNGAM | 66.5 | 2.2 | 19 | 8.9 |
-| PCMCI+ | 99.1 | 8.8 | 7 | 12.2 |
-| PCGCE | 186.2 | 0.5 | 52 | 20.7 |
-| **Dynotears** | **112.0** | **21.1** | **72** | **47.6** |
-| TiMINo | 435.0 | 1.1 | 0 | 50.0 |
-| NBCB-w | 108.2 | 9.5 | 16 | 13.4 |
-| NBCB-e | 42.5 | 2.6 | 10 | 9.4 |
-| CBNB-w | 108.2 | 9.5 | 16 | 13.4 |
-| CBNB-e | 42.1 | 2.6 | 10 | 9.5 |
-
-**Key Finding**: Dynotears (NOTEARS algorithm) achieves the highest number of high-stability edges (72), making it the most reliable for predictive maintenance applications.
-
----
-
-## Top 10 Predictive Maintenance Edges
-
-These are the most important causal relationships for predicting machine failures:
-
-| Rank | Source | Target | Category | Stability (%) | # Algorithms |
-|------|--------|--------|----------|---------------|--------------|
-| 1 | **maint_comp2** | **failure_comp2** | Maintenance -> Failure | **89.2** | 4 |
-| 2 | **error3_count** | **failure_comp2** | Error -> Failure | **74.4** | 5 |
-| 3 | **error1_count** | **failure_comp1** | Error -> Failure | **73.2** | 4 |
-| 4 | **error2_count** | **failure_comp2** | Error -> Failure | **72.6** | 5 |
-| 5 | **maint_comp1** | **failure_comp1** | Maintenance -> Failure | **82.5** | 4 |
-| 6 | **rotate_mean** | **failure_comp2** | Sensor -> Failure | **64.8** | 5 |
-| 7 | **volt_mean** | **failure_comp1** | Sensor -> Failure | **63.2** | 4 |
-| 8 | rotate_min | failure_comp2 | Sensor -> Failure | 66.0 | 1 |
-| 9 | pressure_mean | failure_comp4 | Sensor -> Failure | 65.0 | 1 |
-| 10 | error3_count | failure_comp1 | Error -> Failure | 60.0 | 1 |
-
----
+**Best performer**: Dynotears with 71 high-stability edges and 47.3% average stability.
 
 ## Key Findings
 
-### 1. Error Codes are Strong Failure Predictors
+### Validated Causal Relationships (>=70% stability, 3+ algorithms)
 
-| Error Type | Predicts Failure | Stability | Algorithms Agreeing |
-|------------|-----------------|-----------|---------------------|
-| error3_count | Component 2 | 74.4% | 5 |
-| error1_count | Component 1 | 73.2% | 4 |
-| error2_count | Component 2 | 72.6% | 5 |
+1. **Error -> Failure relationships**:
+   - error3_count -> failure_comp2 (88% stability, 3 algorithms)
+   - error2_count -> failure_comp2 (85% stability, 3 algorithms)
+   - error1_count -> failure_comp1 (80% stability, 3 algorithms)
 
-**Interpretation**: Error type 3 and error type 2 are strong predictors of Component 2 failures, while error type 1 predicts Component 1 failures. This suggests component-specific error monitoring strategies.
+2. **Failure -> Maintenance relationships**:
+   - failure_comp2 -> maint_comp2 (86% stability, 3 algorithms)
+   - failure_comp1 -> maint_comp1 (79% stability, 3 algorithms)
 
-### 2. Sensor Readings Predict Failures
+3. **Sensor autocorrelations** (expected, validates methodology):
+   - pressure_mean -> pressure_mean (99% stability, 5 algorithms)
+   - rotate_mean -> rotate_mean (99% stability, 5 algorithms)
+   - Sensor min/max/std relationships consistently discovered
 
-| Sensor | Predicts Failure | Stability | Algorithms Agreeing |
-|--------|-----------------|-----------|---------------------|
-| rotate_mean | Component 2 | 64.8% | 5 |
-| volt_mean | Component 1 | 63.2% | 4 |
-| pressure_mean | Component 4 | 65.0% | 1 |
+### Domain Validation
 
-**Interpretation**: Rotation speed anomalies predict Component 2 failures, voltage anomalies predict Component 1 failures, and pressure anomalies predict Component 4 failures.
+The discovered causal chain **Errors -> Failures -> Maintenance** aligns with industrial domain knowledge:
+- Error events precede component failures (predictive signal)
+- Failures trigger maintenance actions (reactive maintenance pattern)
 
-### 3. Maintenance-Failure Relationship
+## Run Statistics
 
-| Maintenance | Failure | Stability | Interpretation |
-|-------------|---------|-----------|----------------|
-| maint_comp2 | failure_comp2 | 89.2% | Strong correlation - reactive maintenance |
-| maint_comp1 | failure_comp1 | 82.5% | Strong correlation - reactive maintenance |
+- **Total algorithm runs**: 1,000 (100 machines x 10 algorithms)
+- **Total unique edges discovered**: 499 (non-trivial)
+- **High-stability edges (>=70%)**: 204
+- **Cross-algorithm validated edges**: 30 (found by 3+ algorithms)
 
-**Interpretation**: The high stability of maintenance-to-failure edges suggests that maintenance is often performed reactively (after or during failure) rather than proactively.
+## Stability Thresholds
 
-### 4. Cross-Sensor Relationships
+| Stability Level | Range | Interpretation |
+|-----------------|-------|----------------|
+| High | >=70% | Likely real causal relationship |
+| Medium | 50-69% | Possible relationship, needs validation |
+| Low | <50% | Likely spurious or machine-specific |
 
-Strong causal relationships exist between different sensor types:
-- **vibration_max -> rotate_max**: 98% stability
-- **volt_max -> pressure_max**: High cross-sensor influence
-
-These relationships can be used for multi-sensor anomaly detection.
-
----
-
-## Stability-Based Validation Results
-
-### Edge Stability Distribution
-
-| Stability Range | # Edges | Percentage |
-|-----------------|---------|------------|
-| High (>=80%) | 72 | 14.4% |
-| Medium (50-80%) | 165 | 33.1% |
-| Low (<50%) | 262 | 52.5% |
-
-### Algorithm Agreement Analysis
-
-The Jaccard similarity between algorithms ranges from 0.05 to 0.45, indicating:
-- Moderate agreement on high-confidence edges
-- Each algorithm captures different aspects of causal structure
-- Ensemble approach (multiple algorithms) provides more robust results
-
----
-
-## Methodology Summary
-
-### Data
-- **Dataset**: Azure Predictive Maintenance
-- **Source**: Microsoft Azure AI Gallery
-- **Machines**: 100 industrial machines
-- **Time Period**: 1 year of telemetry data
-- **Variables**: 30 (telemetry, errors, maintenance, failures)
-
-### Algorithms Implemented
-
-| Category | Algorithms |
-|----------|------------|
-| Granger-based | GCMVL (VAR + Lasso) |
-| Non-Gaussian | VarLiNGAM |
-| Constraint-based | PCMCI+, PCGCE |
-| Score-based | Dynotears (NOTEARS) |
-| Hybrid | TiMINo, NBCB-w, NBCB-e, CBNB-w, CBNB-e |
-
-### Validation Approach
-
-**Stability Score** = (Machines showing edge / Total machines) x 100%
-
-This approach:
-- Does not require ground truth
-- Validates consistency across independent machines
-- Identifies robust causal relationships
-
----
-
-## Files Structure
+## Files Generated
 
 ```
 results/
-├── causal_graphs/          # Raw algorithm outputs (100 JSON files)
-├── stability_scores/       # Stability analysis results
-│   ├── stability_*.csv     # Per-algorithm stability scores
+├── causal_graphs/              # Per-machine JSON outputs (100 files)
+│   └── machine_XXX.json        # Edges discovered per algorithm
+├── stability_scores/           # Stability analysis
+│   ├── stability_*.csv         # Per-algorithm stability scores (10 files)
 │   ├── high_confidence_edges.csv
-│   ├── algorithm_agreement.csv
-│   └── top_pdm_edges.csv   # Top predictive maintenance edges
-├── figures/                # All generated visualizations
-│   ├── fig1_algorithm_comparison.png/pdf
-│   ├── fig2_stability_heatmap.png/pdf
-│   ├── fig3_algorithm_agreement.png/pdf
-│   ├── fig4_consensus_graph.png/pdf
-│   ├── fig5_stability_distribution.png/pdf
-│   ├── fig6_edge_categories.png/pdf
-│   ├── fig7_variable_relationships.png/pdf
-│   ├── fig8_execution_boxplot.png/pdf
-│   ├── fig9_consensus_by_threshold.png/pdf
-│   ├── fig10_summary_table.png/pdf
-│   ├── fig_pdm_network.png/pdf
-│   └── fig_pdm_category_summary.png/pdf
-├── figures_project/         # project-ready figures
-├── tables_project/          # LaTeX tables
-└── data_project/            # Raw data exports
+│   ├── algorithm_agreement.csv # Jaccard similarity matrix
+│   └── summary_report.json     # Complete statistics
+├── figures/                    # Colorful visualizations
+│   ├── extra_algorithm_overview.png
+│   ├── extra_stability_distribution.png
+│   ├── extra_agreement_heatmap.png
+│   ├── extra_pdm_causal_chain.png
+│   ├── extra_edge_type_breakdown.png
+│   ├── extra_top_edges_table.png
+│   ├── extra_algorithm_ranking.png
+│   └── extra_summary_infographic.png
+└── PROJECT_SUMMARY.md          # This file
+
+paper_figures/                  # Publication-quality (Springer format)
+├── fig1_algorithm_agreement.png/pdf
+├── fig2_algorithm_comparison.png/pdf
+└── fig3_causal_network.png/pdf
 ```
-
----
-
-## Conclusions
-
-1. **Error codes are the strongest predictors** of machine failures, with up to 74% stability across 100 machines.
-
-2. **Sensor readings (rotation, voltage, pressure)** provide early warning signals for specific component failures.
-
-3. **Dynotears (NOTEARS algorithm)** achieves the best balance of stability and edge discovery.
-
-4. **Stability-based validation** successfully identifies robust causal relationships without requiring ground truth.
-
-5. **Cross-algorithm consensus** (edges found by multiple algorithms) provides the most reliable predictions.
-
----
 
 ## Reproducibility
 
-To reproduce these results:
-
 ```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-
-# 2. Preprocess data
-python -m src.preprocessing.data_preprocessor
-
-# 3. Run all algorithms (parallel)
-python -m src.algorithms.algorithm_runner --all --parallel --workers 8
-
-# 4. Calculate stability scores
-python -m src.analysis.stability_calculator
-
-# 5. Generate visualizations
-python -m src.analysis.project_visualizations
-
-# 6. Extract PdM insights
-python -m src.analysis.pdm_insights
+# Full pipeline
+python -m src.preprocessing.data_merger              # Step 1: Preprocess data
+python -m src.algorithms.algorithm_runner --all --parallel --workers 8  # Step 2: Run algorithms
+python -m src.analysis.stability_calculator          # Step 3: Calculate stability
+python -m src.visualization.plot_results             # Step 4: Generate basic figures
+python generate_paper_figures.py                     # Step 5: Publication figures
+python generate_extra_figures.py                     # Step 6: Colorful figures
 ```
 
-**Total execution time**: ~25 minutes on AMD Ryzen 7 9700X (8 cores)
+## Citation
 
----
+If using this work, please cite:
 
-*Generated: December 2025*
-*Master's project - Causal Discovery for Predictive Maintenance*
+```
+Causal Discovery for Predictive Maintenance: A Stability-Based Validation Approach
+Master Project, UFAZ 2025-2026
+```

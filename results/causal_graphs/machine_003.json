@@ -1063,7 +1063,7 @@
       "n_edges": 11,
       "success": true,
       "error": null,
-      "execution_time": 51.84035634994507,
+      "execution_time": 48.12138032913208,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -1265,6 +1265,7 @@
           0,
           0,
           0,
+          1,
           0,
           0,
           0,
@@ -1276,8 +1277,7 @@
           0,
           0,
           0,
-          0,
-          0,
+          1,
           0,
           0,
           0,
@@ -2118,6 +2118,16 @@
           1.0
         ],
         [
+          "rotate_std",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "rotate_std",
+          "error1_count",
+          1.0
+        ],
+        [
           "rotate_min",
           "rotate_mean",
           1.0
@@ -2308,10 +2318,10 @@
           1.0
         ]
       ],
-      "n_edges": 49,
+      "n_edges": 51,
       "success": true,
       "error": null,
-      "execution_time": 2.4468424320220947,
+      "execution_time": 2.2046024799346924,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -3824,7 +3834,7 @@
       "n_edges": 102,
       "success": true,
       "error": null,
-      "execution_time": 9.640882730484009,
+      "execution_time": 10.198822975158691,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -3887,7 +3897,7 @@
           0,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -3915,14 +3925,14 @@
           0,
           0,
           0,
-          1,
           0,
           0,
           0,
           0,
           0,
           0,
-          1,
+          0,
+          0,
           0
         ],
         [
@@ -3949,63 +3959,239 @@
           0,
           0,
           0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
           1
         ],
         [
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          1,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0,
-          1,
           0,
           1,
           1,
@@ -4014,23 +4200,14 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
+          1,
           1,
           0,
           1,
           1,
+          1,
           0,
+          1,
           0,
           0,
           0,
@@ -4038,16 +4215,9 @@
           1,
           0,
           0,
-          1,
-          0,
-          0,
           0,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
           0,
           0,
           0,
@@ -4060,73 +4230,9 @@
           0,
           1,
           1,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
           1,
           0,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          0,
-          1,
-          0,
-          0,
-          1,
-          1,
-          1,
-          0,
-          1,
-          0,
-          1,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
           1,
           1,
           1,
@@ -4147,102 +4253,6 @@
           0,
           1,
           0,
-          0
-        ],
-        [
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          1,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0,
-          1,
-          1,
-          1,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          1,
           0
         ],
         [
@@ -4268,11 +4278,11 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
           1,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           0
@@ -4330,13 +4340,13 @@
           0,
           0,
           0,
+          1,
           0,
           0,
           0,
+          1,
           0,
-          0,
-          0,
-          0,
+          1,
           0,
           0,
           0
@@ -4359,39 +4369,7 @@
           1,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
           1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -4410,42 +4388,10 @@
           0,
           0,
           0,
-          1,
-          0,
           0,
           1,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          1,
-          1,
           0,
           0,
           0,
@@ -4474,16 +4420,7 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
           1,
-          0,
-          1,
-          0,
-          0,
           0,
           0,
           1,
@@ -4494,7 +4431,16 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
           1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -4518,13 +4464,13 @@
           0,
           0,
           0,
+          0,
+          1,
+          0,
           1,
           0,
           0,
           0,
-          0,
-          0,
-          1,
           0,
           0,
           0,
@@ -4534,6 +4480,14 @@
           0
         ],
         [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
           1,
           1,
           0,
@@ -4549,17 +4503,9 @@
           0,
           0,
           0,
-          0,
-          0,
           1,
           0,
           0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          1,
           0,
           0,
           0,
@@ -4570,69 +4516,10 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           1,
           0,
           0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           1,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -4647,16 +4534,11 @@
           0,
           0,
           0,
+          0,
           1,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
           0,
           0,
           0
@@ -4683,6 +4565,134 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           1,
           0,
           0,
@@ -4792,29 +4802,29 @@
         [
           0,
           0,
-          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -4859,653 +4869,678 @@
           1.0
         ],
         [
-          "volt_std",
-          "volt_min",
-          1.0
-        ],
-        [
-          "volt_std",
-          "volt_max",
-          1.0
-        ],
-        [
-          "volt_std",
-          "pressure_std",
-          1.0
-        ],
-        [
-          "volt_std",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "volt_std",
-          "failure_comp1",
-          1.0
-        ],
-        [
-          "volt_std",
-          "maint_comp4",
-          1.0
-        ],
-        [
-          "volt_min",
           "volt_mean",
-          1.0
-        ],
-        [
-          "volt_min",
-          "volt_std",
-          1.0
-        ],
-        [
-          "volt_min",
-          "volt_max",
-          1.0
-        ],
-        [
-          "volt_min",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "volt_min",
           "maint_comp1",
           1.0
         ],
         [
-          "volt_min",
-          "age",
-          1.0
-        ],
-        [
-          "volt_max",
-          "volt_mean",
-          1.0
-        ],
-        [
-          "volt_max",
           "volt_std",
-          1.0
-        ],
-        [
-          "volt_max",
           "volt_min",
           1.0
         ],
         [
-          "volt_max",
-          "error1_count",
-          1.0
-        ],
-        [
-          "volt_max",
-          "failure_comp1",
-          1.0
-        ],
-        [
-          "volt_max",
-          "failure_comp4",
-          1.0
-        ],
-        [
-          "volt_max",
-          "maint_comp4",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "rotate_std",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "error2_count",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "error3_count",
-          1.0
-        ],
-        [
-          "rotate_mean",
-          "error5_count",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "error1_count",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "error5_count",
-          1.0
-        ],
-        [
-          "rotate_min",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "rotate_min",
-          "rotate_std",
-          1.0
-        ],
-        [
-          "rotate_min",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "rotate_min",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "rotate_min",
-          "error3_count",
-          1.0
-        ],
-        [
-          "rotate_min",
-          "error5_count",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "rotate_std",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "pressure_mean",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "error2_count",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "error3_count",
-          1.0
-        ],
-        [
-          "rotate_max",
-          "error5_count",
-          1.0
-        ],
-        [
-          "pressure_mean",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "pressure_mean",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "pressure_mean",
-          "pressure_std",
-          1.0
-        ],
-        [
-          "pressure_mean",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "pressure_mean",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "pressure_mean",
-          "maint_comp3",
-          1.0
-        ],
-        [
-          "pressure_std",
           "volt_std",
+          "volt_max",
           1.0
         ],
         [
-          "pressure_std",
-          "pressure_mean",
-          1.0
-        ],
-        [
-          "pressure_std",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "pressure_std",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "pressure_min",
           "volt_std",
+          "pressure_std",
           1.0
         ],
         [
+          "volt_std",
           "pressure_min",
+          1.0
+        ],
+        [
           "volt_min",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "pressure_mean",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "pressure_std",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "pressure_min",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "rotate_std",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "pressure_mean",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "pressure_std",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "failure_comp4",
-          1.0
-        ],
-        [
-          "pressure_max",
-          "maint_comp4",
-          1.0
-        ],
-        [
-          "vibration_mean",
           "volt_mean",
           1.0
         ],
         [
-          "vibration_mean",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "vibration_mean",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "vibration_mean",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "vibration_mean",
-          "vibration_min",
-          1.0
-        ],
-        [
-          "vibration_mean",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "vibration_mean",
-          "failure_comp2",
-          1.0
-        ],
-        [
-          "vibration_std",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "vibration_std",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "vibration_std",
-          "vibration_min",
-          1.0
-        ],
-        [
-          "vibration_std",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "vibration_std",
-          "maint_comp3",
-          1.0
-        ],
-        [
-          "vibration_min",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "vibration_min",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "vibration_min",
-          "vibration_max",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "volt_mean",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "volt_max",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "pressure_mean",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "pressure_std",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "pressure_min",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "vibration_mean",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "vibration_std",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "vibration_min",
-          1.0
-        ],
-        [
-          "error1_count",
           "volt_min",
-          1.0
-        ],
-        [
-          "error1_count",
-          "rotate_std",
-          1.0
-        ],
-        [
-          "error2_count",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "error2_count",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "error2_count",
-          "error3_count",
-          1.0
-        ],
-        [
-          "error2_count",
-          "failure_comp1",
-          1.0
-        ],
-        [
-          "error3_count",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "error3_count",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "error3_count",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "error3_count",
-          "error2_count",
-          1.0
-        ],
-        [
-          "error4_count",
-          "pressure_std",
-          1.0
-        ],
-        [
-          "error4_count",
-          "pressure_max",
-          1.0
-        ],
-        [
-          "error4_count",
-          "error1_count",
-          1.0
-        ],
-        [
-          "error4_count",
-          "failure_comp4",
-          1.0
-        ],
-        [
-          "error5_count",
-          "rotate_mean",
-          1.0
-        ],
-        [
-          "error5_count",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "error5_count",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "error5_count",
-          "error1_count",
-          1.0
-        ],
-        [
-          "error5_count",
-          "failure_comp2",
-          1.0
-        ],
-        [
-          "failure_comp1",
-          "volt_mean",
-          1.0
-        ],
-        [
-          "failure_comp1",
           "volt_std",
           1.0
         ],
         [
-          "failure_comp1",
+          "volt_min",
           "volt_max",
           1.0
         ],
         [
-          "failure_comp1",
-          "error2_count",
+          "volt_min",
+          "pressure_min",
           1.0
         ],
         [
-          "failure_comp1",
+          "volt_min",
           "failure_comp3",
           1.0
         ],
         [
+          "volt_min",
+          "maint_comp1",
+          1.0
+        ],
+        [
+          "volt_max",
+          "volt_mean",
+          1.0
+        ],
+        [
+          "volt_max",
+          "volt_std",
+          1.0
+        ],
+        [
+          "volt_max",
+          "volt_min",
+          1.0
+        ],
+        [
+          "volt_max",
+          "error1_count",
+          1.0
+        ],
+        [
+          "volt_max",
+          "failure_comp4",
+          1.0
+        ],
+        [
+          "volt_max",
+          "maint_comp4",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "rotate_min",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "error2_count",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "error3_count",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "error5_count",
+          1.0
+        ],
+        [
+          "rotate_mean",
+          "failure_comp4",
+          1.0
+        ],
+        [
+          "rotate_std",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "rotate_std",
+          "rotate_min",
+          1.0
+        ],
+        [
+          "rotate_std",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "rotate_std",
+          "error1_count",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "error3_count",
+          1.0
+        ],
+        [
+          "rotate_min",
+          "failure_comp2",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "rotate_min",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "pressure_mean",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "error2_count",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "error3_count",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "error4_count",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "error5_count",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "pressure_std",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "pressure_min",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "error4_count",
+          1.0
+        ],
+        [
+          "pressure_mean",
+          "maint_comp3",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "volt_std",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "pressure_mean",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "pressure_min",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "error4_count",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "age",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "volt_std",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "volt_min",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "pressure_mean",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "pressure_std",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "error5_count",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "failure_comp4",
+          1.0
+        ],
+        [
+          "pressure_min",
+          "maint_comp1",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "rotate_min",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "pressure_mean",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "pressure_std",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "pressure_min",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "maint_comp3",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "volt_mean",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "pressure_min",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "vibration_min",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "vibration_mean",
+          "maint_comp2",
+          1.0
+        ],
+        [
+          "vibration_std",
+          "pressure_min",
+          1.0
+        ],
+        [
+          "vibration_std",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "vibration_std",
+          "vibration_min",
+          1.0
+        ],
+        [
+          "vibration_std",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "vibration_std",
+          "maint_comp3",
+          1.0
+        ],
+        [
+          "vibration_min",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "vibration_min",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "vibration_min",
+          "vibration_max",
+          1.0
+        ],
+        [
+          "vibration_min",
+          "error5_count",
+          1.0
+        ],
+        [
+          "vibration_min",
+          "failure_comp4",
+          1.0
+        ],
+        [
+          "vibration_min",
+          "maint_comp2",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "volt_mean",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "volt_max",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "pressure_mean",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "pressure_std",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "pressure_min",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "vibration_mean",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "vibration_std",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "vibration_min",
+          1.0
+        ],
+        [
+          "vibration_max",
+          "error2_count",
+          1.0
+        ],
+        [
+          "error1_count",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "error1_count",
+          "error2_count",
+          1.0
+        ],
+        [
+          "error2_count",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "error2_count",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "error2_count",
+          "error3_count",
+          1.0
+        ],
+        [
+          "error3_count",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "error3_count",
+          "rotate_min",
+          1.0
+        ],
+        [
+          "error3_count",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "error3_count",
+          "error2_count",
+          1.0
+        ],
+        [
+          "error3_count",
+          "error4_count",
+          1.0
+        ],
+        [
+          "error4_count",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "error4_count",
+          "pressure_mean",
+          1.0
+        ],
+        [
+          "error4_count",
+          "pressure_std",
+          1.0
+        ],
+        [
+          "error4_count",
+          "pressure_max",
+          1.0
+        ],
+        [
+          "error4_count",
+          "failure_comp3",
+          1.0
+        ],
+        [
+          "error4_count",
+          "age",
+          1.0
+        ],
+        [
+          "error5_count",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "error5_count",
+          "rotate_max",
+          1.0
+        ],
+        [
+          "error5_count",
+          "error1_count",
+          1.0
+        ],
+        [
+          "error5_count",
+          "failure_comp3",
+          1.0
+        ],
+        [
+          "error5_count",
+          "maint_comp2",
+          1.0
+        ],
+        [
           "failure_comp1",
           "maint_comp1",
           1.0
         ],
         [
-          "failure_comp1",
-          "age",
+          "failure_comp2",
+          "rotate_min",
+          1.0
+        ],
+        [
+          "failure_comp2",
+          "failure_comp3",
           1.0
         ],
         [
@@ -5515,22 +5550,37 @@
         ],
         [
           "failure_comp3",
-          "error2_count",
+          "error5_count",
           1.0
         ],
         [
           "failure_comp3",
-          "failure_comp1",
+          "failure_comp2",
           1.0
         ],
         [
           "failure_comp4",
-          "pressure_max",
+          "rotate_mean",
           1.0
         ],
         [
           "failure_comp4",
-          "error2_count",
+          "vibration_min",
+          1.0
+        ],
+        [
+          "failure_comp4",
+          "error1_count",
+          1.0
+        ],
+        [
+          "maint_comp1",
+          "volt_mean",
+          1.0
+        ],
+        [
+          "maint_comp1",
+          "pressure_min",
           1.0
         ],
         [
@@ -5595,24 +5645,14 @@
         ],
         [
           "age",
-          "volt_min",
-          1.0
-        ],
-        [
-          "age",
-          "rotate_std",
-          1.0
-        ],
-        [
-          "age",
-          "failure_comp1",
+          "failure_comp4",
           1.0
         ]
       ],
-      "n_edges": 157,
+      "n_edges": 163,
       "success": true,
       "error": null,
-      "execution_time": 0.5634355545043945,
+      "execution_time": 0.59242844581604,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -6105,7 +6145,7 @@
           1,
           1,
           1,
-          1,
+          0,
           0,
           0,
           0,
@@ -6297,7 +6337,7 @@
           1,
           0,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -7028,11 +7068,6 @@
         ],
         [
           "vibration_min",
-          "rotate_max",
-          1.0
-        ],
-        [
-          "vibration_min",
           "pressure_max",
           1.0
         ],
@@ -7137,6 +7172,11 @@
           1.0
         ],
         [
+          "error5_count",
+          "rotate_max",
+          1.0
+        ],
+        [
           "failure_comp2",
           "rotate_mean",
           1.0
@@ -7190,7 +7230,7 @@
       "n_edges": 115,
       "success": true,
       "error": null,
-      "execution_time": 44.532835960388184,
+      "execution_time": 37.14625263214111,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -10368,7 +10408,7 @@
       "n_edges": 435,
       "success": true,
       "error": null,
-      "execution_time": 1.3291893005371094,
+      "execution_time": 1.2365076541900635,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -11941,7 +11981,7 @@
       "n_edges": 114,
       "success": true,
       "error": null,
-      "execution_time": 11.644283294677734,
+      "execution_time": 11.259897947311401,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -12046,7 +12086,7 @@
           1,
           1,
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -12077,137 +12117,9 @@
         [
           1,
           1,
-          1,
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
           0,
           0,
           0,
@@ -12240,6 +12152,134 @@
           0,
           0,
           0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -12344,38 +12384,6 @@
           1,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
           0,
           0,
           0,
@@ -12440,70 +12448,6 @@
           0,
           0,
           1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -12535,13 +12479,13 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
           0,
           1,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -12559,7 +12503,39 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -12592,6 +12568,38 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
           0,
           0,
           0,
@@ -12688,6 +12696,38 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
           0,
           0,
           0,
@@ -12956,6 +12996,11 @@
           1.0
         ],
         [
+          "volt_min",
+          "volt_max",
+          1.0
+        ],
+        [
           "volt_max",
           "volt_mean",
           1.0
@@ -12963,11 +13008,6 @@
         [
           "volt_max",
           "volt_std",
-          1.0
-        ],
-        [
-          "volt_max",
-          "volt_min",
           1.0
         ],
         [
@@ -12986,28 +13026,28 @@
           1.0
         ],
         [
-          "rotate_std",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "rotate_max",
-          1.0
-        ],
-        [
           "rotate_min",
           "rotate_mean",
           1.0
         ],
         [
           "rotate_min",
-          "rotate_max",
+          "rotate_std",
           1.0
         ],
         [
           "rotate_max",
           "rotate_mean",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "rotate_min",
           1.0
         ],
         [
@@ -13071,6 +13111,11 @@
           1.0
         ],
         [
+          "vibration_min",
+          "vibration_max",
+          1.0
+        ],
+        [
           "vibration_max",
           "vibration_mean",
           1.0
@@ -13081,17 +13126,17 @@
           1.0
         ],
         [
-          "vibration_max",
-          "vibration_min",
-          1.0
-        ],
-        [
           "error2_count",
           "error3_count",
           1.0
         ],
         [
           "error3_count",
+          "rotate_mean",
+          1.0
+        ],
+        [
+          "failure_comp2",
           "rotate_mean",
           1.0
         ],
@@ -13121,10 +13166,10 @@
           1.0
         ]
       ],
-      "n_edges": 36,
+      "n_edges": 37,
       "success": true,
       "error": null,
-      "execution_time": 3.205990791320801,
+      "execution_time": 2.9546430110931396,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -14697,7 +14742,7 @@
       "n_edges": 114,
       "success": true,
       "error": null,
-      "execution_time": 11.590949535369873,
+      "execution_time": 9.150548696517944,
       "variables": [
         "volt_mean",
         "volt_std",
@@ -14901,70 +14946,6 @@
           0,
           0,
           0,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
-          0,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
           0,
           0,
           0,
@@ -14995,12 +14976,44 @@
           0,
           0,
           0,
+          1,
+          1,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
           0,
           0,
           0,
           0,
           1,
+          1,
+          1,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -15032,39 +15045,7 @@
           0,
           0,
           0,
-          0,
           1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          0,
           0,
           0,
           0,
@@ -15088,7 +15069,7 @@
         ],
         [
           0,
-          0,
+          1,
           0,
           0,
           0,
@@ -15127,11 +15108,43 @@
           0,
           0,
           0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
           0,
           1,
+          1,
+          1,
+          0,
+          0,
           0,
           0,
           0,
@@ -15196,70 +15209,6 @@
           0,
           0,
           1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          1,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0
-        ],
-        [
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0,
           0,
@@ -15291,13 +15240,13 @@
           0,
           0,
           0,
-          0,
-          0,
-          0,
-          0,
-          0,
+          1,
+          1,
           0,
           1,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -15315,7 +15264,39 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
           1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
           0,
           0,
           0,
@@ -15348,6 +15329,38 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
           0,
           0,
           0,
@@ -15443,7 +15456,7 @@
           0,
           0,
           0,
-          1,
+          0,
           0,
           0,
           0,
@@ -15483,6 +15496,38 @@
           0,
           0,
           0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
           0,
           0,
           0,
@@ -15742,23 +15787,13 @@
           1.0
         ],
         [
-          "rotate_std",
-          "rotate_min",
-          1.0
-        ],
-        [
-          "rotate_std",
-          "rotate_max",
-          1.0
-        ],
-        [
           "rotate_min",
           "rotate_mean",
           1.0
         ],
         [
           "rotate_min",
-          "rotate_max",
+          "rotate_std",
           1.0
         ],
         [
@@ -15767,8 +15802,28 @@
           1.0
         ],
         [
+          "rotate_max",
+          "rotate_std",
+          1.0
+        ],
+        [
+          "rotate_max",
+          "rotate_min",
+          1.0
+        ],
+        [
           "pressure_mean",
           "pressure_std",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "volt_std",
+          1.0
+        ],
+        [
+          "pressure_std",
+          "pressure_mean",
           1.0
         ],
         [
@@ -15777,11 +15832,6 @@
           1.0
         ],
         [
-          "pressure_std",
-          "pressure_max",
-          1.0
-        ],
-        [
           "pressure_min",
           "pressure_mean",
           1.0
@@ -15789,6 +15839,11 @@
         [
           "pressure_max",
           "pressure_mean",
+          1.0
+        ],
+        [
+          "pressure_max",
+          "pressure_std",
           1.0
         ],
         [
@@ -15817,6 +15872,11 @@
           1.0
         ],
         [
+          "vibration_min",
+          "vibration_max",
+          1.0
+        ],
+        [
           "vibration_max",
           "vibration_mean",
           1.0
@@ -15824,11 +15884,6 @@
         [
           "vibration_max",
           "vibration_std",
-          1.0
-        ],
-        [
-          "vibration_max",
-          "vibration_min",
           1.0
         ],
         [
@@ -15842,8 +15897,8 @@
           1.0
         ],
         [
-          "failure_comp2",
-          "rotate_mean",
+          "failure_comp3",
+          "pressure_max",
           1.0
         ],
         [
@@ -15872,10 +15927,10 @@
           1.0
         ]
       ],
-      "n_edges": 35,
+      "n_edges": 37,
       "success": true,
       "error": null,
-      "execution_time": 3.2620303630828857,
+      "execution_time": 2.4980735778808594,
       "variables": [
         "volt_mean",
         "volt_std",

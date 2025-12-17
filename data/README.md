@@ -127,7 +127,17 @@ After running the preprocessing pipeline, each machine gets its own CSV file wit
 
 ## Notes
 
-1. Raw data files are NOT tracked in git (too large)
+1. Raw data files are NOT tracked in git (too large, ~77 MB)
 2. Processed files are NOT tracked in git (regeneratable)
 3. Place `.gitkeep` files to preserve directory structure
-4. Run preprocessing to generate processed files from raw data
+4. Run preprocessing to generate processed files:
+   ```bash
+   python -m src.preprocessing.data_merger
+   ```
+
+## Quick Start
+
+1. Download dataset from Kaggle link above
+2. Extract CSV files to `raw/` folder
+3. Run preprocessing command
+4. Verify 100 machine files created in `processed/`

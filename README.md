@@ -56,7 +56,10 @@ python -m src.algorithms.algorithm_runner --all --parallel --workers 8
 python -m src.analysis.stability_calculator
 
 # Step 4: Generate figures
-python -m src.analysis.report_visualizations
+python -m src.visualization.plot_results
+
+# Step 5: Generate publication figures (Springer format)
+python generate_paper_figures.py
 ```
 
 ### Docker
@@ -69,27 +72,40 @@ docker compose up --build
 
 ```
 ├── data/
-│   ├── raw/              # CSV files (not in git)
-│   └── processed/        # Preprocessed data
+│   ├── raw/                    # Original CSV files (download from Kaggle)
+│   ├── processed/              # Preprocessed time series per machine
+│   └── README.md               # Dataset documentation
 ├── src/
-│   ├── preprocessing/    # Data preparation
-│   ├── algorithms/       # 10 algorithms
-│   ├── analysis/         # Stability analysis
-│   └── visualization/    # Plotting
+│   ├── preprocessing/          # Data preparation pipeline
+│   ├── algorithms/             # 10 causal discovery algorithms
+│   ├── analysis/               # Stability calculation
+│   └── visualization/          # Result plotting
 ├── results/
-│   ├── causal_graphs/    # JSON outputs
-│   ├── stability_scores/ # Analysis results
-│   └── figures/          # Visualizations
+│   ├── causal_graphs/          # Per-machine JSON outputs (100 files)
+│   ├── stability_scores/       # Stability analysis CSVs
+│   ├── figures/                # Colorful visualizations (8 figures)
+│   └── PROJECT_SUMMARY.md      # Detailed results summary
+├── paper_figures/              # Publication-quality figures (Springer format)
+├── generate_paper_figures.py   # Grayscale figures for paper
+├── generate_extra_figures.py   # Colorful figures for presentations
+├── Dockerfile
+├── docker-compose.yml
 └── requirements.txt
 ```
 
 ## Results
 
-See `results/PROJECT_SUMMARY.md` for details.
+See `results/PROJECT_SUMMARY.md` for detailed analysis.
 
-- 1,000 runs completed (100 machines x 10 algorithms)
-- 499 non-trivial causal edges found
-- Error codes predict component failures (up to 88% stability)
+### Key Findings
+- **1,000 runs** completed (100 machines × 10 algorithms)
+- **30 validated edges** found by 3+ algorithms with ≥70% stability
+- **Best algorithm**: Dynotears (71 high-stability edges, 47.3% avg stability)
+
+### Main Discoveries
+- Error codes predict component failures (80-88% stability)
+- Failures trigger maintenance actions (79-86% stability)
+- Causal chain: **Errors → Failures → Maintenance**
 
 ## Troubleshooting
 
