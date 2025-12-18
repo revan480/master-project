@@ -14,7 +14,6 @@ Since there's no ground truth for real industrial data, we use **stability-based
 
 **Download Options:**
 - Kaggle: https://www.kaggle.com/datasets/arnabbiswas1/microsoft-azure-predictive-maintenance
-- Azure ML Gallery: https://gallery.azure.ai/Collection/Predictive-Maintenance-Template-3
 
 **Files Required (place in `data/raw/`):**
 | File | Description | Size |
@@ -162,19 +161,3 @@ python -m src.algorithms.algorithm_runner --all --parallel --workers 4
 ```bash
 pip install tigramite --upgrade
 ```
-
-## Citation
-
-If you use this work, please cite:
-```
-@mastersthesis{osmanli2025causal,
-  title={Causal Discovery for Predictive Maintenance},
-  author={Osmanli, Ravan and Abdullazada, Anar},
-  school={UFAZ},
-  year={2025}
-}
-```
-
-## License
-
-MIT License
