@@ -379,9 +379,13 @@ class ResultsPlotter:
 
         return fig
 
-    def generate_all_plots(self) -> None:
-        """Generate all visualization plots."""
-        print("\nGenerating visualizations...")
+    def generate_all_plots(self, include_dataset: bool = False) -> None:
+        """Generate all visualization plots.
+
+        Args:
+            include_dataset: Whether to also generate dataset figures
+        """
+        print("\nGenerating algorithm result visualizations...")
 
         self.plot_stability_distribution()
         self.plot_algorithm_agreement_heatmap()
@@ -389,19 +393,61 @@ class ResultsPlotter:
         self.plot_consensus_graph()
         self.plot_edge_stability_by_type()
 
-        print(f"\nAll figures saved to: {self.figures_path}")
+        print(f"\nAlgorithm figures saved to: {self.figures_path}")
+
+        if include_dataset:
+            self.generate_dataset_figures()
+
+    def generate_dataset_figures(self) -> None:
+        """Generate dataset overview figures."""
+        print("\nGenerating dataset figures...")
+
+        # Import and run dataset figure generation
+        import sys
+        from pathlib import Path
+
+        # Add project root to path
+        project_root = self.results_path.parent
+
+        # Check if raw data exists
+        raw_data_path = project_root / 'data' / 'raw'
+        if not raw_data_path.exists() or not list(raw_data_path.glob('*.csv')):
+            print("  Skipping dataset figures: raw data not found in data/raw/")
+            print("  Download from: https://www.kaggle.com/datasets/arnabbiswas1/microsoft-azure-predictive-maintenance")
+            return
+
+        try:
+            # Try to import the dataset figure generator
+            dataset_figures_script = project_root / 'generate_dataset_figures.py'
+            if dataset_figures_script.exists():
+                import subprocess
+                result = subprocess.run(
+                    [sys.executable, str(dataset_figures_script)],
+                    cwd=str(project_root),
+                    capture_output=True,
+                    text=True
+                )
+                if result.returncode == 0:
+                    print("  Dataset figures generated successfully")
+                else:
+                    print(f"  Dataset figure generation failed: {result.stderr}")
+            else:
+                print("  generate_dataset_figures.py not found")
+        except Exception as e:
+            print(f"  Error generating dataset figures: {e}")
 
 
 @click.command()
 @click.option('--results-path', default='results', help='Path to results directory')
 @click.option('--min-stability', default=70.0, help='Minimum stability for consensus graph')
 @click.option('--min-algorithms', default=3, help='Minimum algorithms for consensus graph')
-def main(results_path: str, min_stability: float, min_algorithms: int):
+@click.option('--include-dataset', is_flag=True, help='Also generate dataset overview figures')
+def main(results_path: str, min_stability: float, min_algorithms: int, include_dataset: bool):
     """
     Generate visualizations for causal discovery results.
     """
     plotter = ResultsPlotter(results_path)
-    plotter.generate_all_plots()
+    plotter.generate_all_plots(include_dataset=include_dataset)
 
 
 if __name__ == '__main__':

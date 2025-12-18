@@ -18,7 +18,7 @@ This project applies 10 causal discovery algorithms to the Azure Predictive Main
 
 ## Algorithms Evaluated
 
-| Algorithm | Type | Library | Edges Found | High-Stability (>=70%) | Avg Stability |
+| Algorithm | Type | Library | Edges Found | High-Stability (>=80%) | Avg Stability |
 |-----------|------|---------|-------------|------------------------|---------------|
 | GCMVL | Granger Causality | statsmodels | 96 | 3 | 12.8% |
 | VarLiNGAM | Non-Gaussian | lingam | 749 | 19 | 8.8% |
@@ -35,7 +35,7 @@ This project applies 10 causal discovery algorithms to the Azure Predictive Main
 
 ## Key Findings
 
-### Validated Causal Relationships (>=70% stability, 3+ algorithms)
+### Validated Causal Relationships (>=80% stability or >=70% with 3+ algorithms)
 
 1. **Error -> Failure relationships**:
    - error3_count -> failure_comp2 (88% stability, 3 algorithms)
@@ -61,16 +61,16 @@ The discovered causal chain **Errors -> Failures -> Maintenance** aligns with in
 
 - **Total algorithm runs**: 1,000 (100 machines x 10 algorithms)
 - **Total unique edges discovered**: 499 (non-trivial)
-- **High-stability edges (>=70%)**: 204
+- **High-stability edges (>=80%)**: 204
 - **Cross-algorithm validated edges**: 30 (found by 3+ algorithms)
 
 ## Stability Thresholds
 
 | Stability Level | Range | Interpretation |
 |-----------------|-------|----------------|
-| High | >=70% | Likely real causal relationship |
-| Medium | 50-69% | Possible relationship, needs validation |
-| Low | <50% | Likely spurious or machine-specific |
+| High | >=80% | Confident causal relationship |
+| Moderate | 70-79% | Likely real, needs multi-algorithm support |
+| Low | <70% | Possibly spurious or machine-specific |
 
 ## Files Generated
 
@@ -94,13 +94,4 @@ python -m src.preprocessing.data_merger              # Step 1: Preprocess data
 python -m src.algorithms.algorithm_runner --all --parallel --workers 8  # Step 2: Run algorithms
 python -m src.analysis.stability_calculator          # Step 3: Calculate stability
 python -m src.visualization.plot_results             # Step 4: Generate figures
-```
-
-## Citation
-
-If using this work, please cite:
-
-```
-Causal Discovery for Predictive Maintenance: A Stability-Based Validation Approach
-Master Project, UFAZ 2025-2026
 ```

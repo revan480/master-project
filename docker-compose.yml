@@ -22,11 +22,12 @@ services:
     container_name: pdm_algorithms
     volumes:
       - ./src:/app/src:ro
+      - ./data/processed:/app/data/processed:ro
       - ./results:/app/results:rw
     environment:
       - PYTHONPATH=/app
     working_dir: /app
-    command: ["python", "-m", "src.algorithms.algorithm_runner", "--all"]
+    command: ["python", "-m", "src.algorithms.algorithm_runner", "--all", "--parallel", "--workers", "4"]
 
   # Stability analysis service
   analysis:
@@ -42,7 +43,7 @@ services:
     working_dir: /app
     command: ["python", "-m", "src.analysis.stability_calculator"]
 
-  # Visualization service
+  # Visualization service (algorithm results only)
   visualize:
     build:
       context: .
@@ -55,6 +56,56 @@ services:
       - PYTHONPATH=/app
     working_dir: /app
     command: ["python", "-m", "src.visualization.plot_results"]
+
+  # Full visualization service (includes dataset figures)
+  visualize-all:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pdm_visualize_all
+    volumes:
+      - ./src:/app/src:ro
+      - ./data/raw:/app/data/raw:ro
+      - ./data/processed:/app/data/processed:ro
+      - ./results:/app/results:rw
+      - ./generate_dataset_figures.py:/app/generate_dataset_figures.py:ro
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    command: ["python", "-m", "src.visualization.plot_results", "--include-dataset"]
+
+  # Dataset figures only
+  dataset-figures:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pdm_dataset_figures
+    volumes:
+      - ./data/raw:/app/data/raw:ro
+      - ./data/processed:/app/data/processed:ro
+      - ./results:/app/results:rw
+      - ./generate_dataset_figures.py:/app/generate_dataset_figures.py:ro
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    command: ["python", "generate_dataset_figures.py"]
+
+  # Paper figures (publication quality)
+  paper-figures:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: pdm_paper_figures
+    volumes:
+      - ./results:/app/results:ro
+      - ./paper_figures:/app/paper_figures:rw
+      - ./generate_paper_figures.py:/app/generate_paper_figures.py:ro
+      - ./generate_extra_figures.py:/app/generate_extra_figures.py:ro
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    command: >
+      sh -c "python generate_paper_figures.py && python generate_extra_figures.py"
 
 # Network configuration
 networks:

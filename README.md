@@ -6,14 +6,24 @@ Master Project - UFAZ 2025-2026
 
 This project applies causal discovery algorithms to industrial predictive maintenance data. We analyze sensor readings from 100 machines over one year to identify causal relationships between sensor measurements, error events, and component failures.
 
-Since there's no ground truth, we use stability-based validation: running algorithms on 100 machines and measuring how often edges appear.
+Since there's no ground truth for real industrial data, we use **stability-based validation**: running algorithms on 100 machines and measuring how consistently edges appear across machines.
 
 ## Dataset
 
-**Source:** Azure Predictive Maintenance Dataset
-**Download:** https://www.kaggle.com/datasets/arnabbiswas1/microsoft-azure-predictive-maintenance
+**Source:** Azure Predictive Maintenance Dataset (Microsoft)
 
-Put the 5 CSV files in `data/raw/` after downloading.
+**Download Options:**
+- Kaggle: https://www.kaggle.com/datasets/arnabbiswas1/microsoft-azure-predictive-maintenance
+- Azure ML Gallery: https://gallery.azure.ai/Collection/Predictive-Maintenance-Template-3
+
+**Files Required (place in `data/raw/`):**
+| File | Description | Size |
+|------|-------------|------|
+| `PdM_telemetry.csv` | Hourly sensor readings (volt, rotate, pressure, vibration) | 876,100 rows |
+| `PdM_errors.csv` | Error events (error1-error5) | 3,919 rows |
+| `PdM_failures.csv` | Component failures (comp1-comp4) | 761 rows |
+| `PdM_machines.csv` | Machine metadata (model, age) | 100 rows |
+| `PdM_maint.csv` | Maintenance records | 3,286 rows |
 
 ## Algorithms
 
@@ -33,6 +43,10 @@ Put the 5 CSV files in `data/raw/` after downloading.
 ## Installation
 
 ```bash
+# Clone the repository
+git clone https://github.com/your-username/MasterProject_PdM_Causal_Discovery.git
+cd MasterProject_PdM_Causal_Discovery
+
 # Create virtual environment
 python -m venv venv
 venv\Scripts\activate  # Windows
@@ -45,29 +59,48 @@ pip install gcastle torch
 
 ## Usage
 
+### Step-by-Step
+
 ```bash
-# Step 1: Preprocess data
+# Step 1: Download data and place in data/raw/
+
+# Step 2: Preprocess data (creates 100 machine files)
 python -m src.preprocessing.data_merger
 
-# Step 2: Run algorithms (~40 min)
+# Step 3: Run algorithms (~40 min on 8 cores)
 python -m src.algorithms.algorithm_runner --all --parallel --workers 8
 
-# Step 3: Calculate stability
+# Step 4: Calculate stability scores
 python -m src.analysis.stability_calculator
 
-# Step 4: Generate figures
+# Step 5: Generate visualizations
 python -m src.visualization.plot_results
+
+# Step 6: Generate dataset figures (optional)
+python generate_dataset_figures.py
+
+# Step 7: Generate paper figures (optional)
+python generate_paper_figures.py
+python generate_extra_figures.py
 ```
 
 ### Docker
 
 ```bash
+# Run full pipeline
 docker compose up --build
+
+# Run specific service
+docker compose up preprocess
+docker compose up algorithms
+docker compose up analysis
+docker compose up visualize
 ```
 
 ## Project Structure
 
 ```
+MasterProject_PdM_Causal_Discovery/
 ├── data/
 │   ├── raw/                    # Original CSV files (download from Kaggle)
 │   ├── processed/              # Preprocessed time series per machine
@@ -80,7 +113,12 @@ docker compose up --build
 ├── results/
 │   ├── causal_graphs/          # Per-machine JSON outputs (100 files)
 │   ├── stability_scores/       # Stability analysis CSVs
+│   ├── figures/                # Generated visualizations
 │   └── PROJECT_SUMMARY.md      # Detailed results summary
+├── paper_figures/              # Publication-quality figures
+├── generate_dataset_figures.py # Dataset visualization script
+├── generate_paper_figures.py   # Paper figure generation
+├── generate_extra_figures.py   # Presentation figures
 ├── Dockerfile
 ├── docker-compose.yml
 └── requirements.txt
@@ -91,14 +129,22 @@ docker compose up --build
 See `results/PROJECT_SUMMARY.md` for detailed analysis.
 
 ### Key Findings
-- **1,000 runs** completed (100 machines × 10 algorithms)
-- **30 validated edges** found by 3+ algorithms with ≥70% stability
+- **1,000 runs** completed (100 machines x 10 algorithms)
+- **30 validated edges** found by 3+ algorithms with >= 70% stability
 - **Best algorithm**: Dynotears (71 high-stability edges, 47.3% avg stability)
 
 ### Main Discoveries
 - Error codes predict component failures (80-88% stability)
 - Failures trigger maintenance actions (79-86% stability)
-- Causal chain: **Errors → Failures → Maintenance**
+- Causal chain: **Errors -> Failures -> Maintenance**
+
+### Generated Figures
+
+| Category | Location | Description |
+|----------|----------|-------------|
+| Algorithm Results | `results/figures/` | Stability distributions, agreement heatmaps, consensus graphs |
+| Dataset Overview | `results/figures/dataset/` | Data characteristics, correlations, event analysis |
+| Paper Figures | `paper_figures/` | Publication-quality figures for Springer |
 
 ## Troubleshooting
 
@@ -116,3 +162,19 @@ python -m src.algorithms.algorithm_runner --all --parallel --workers 4
 ```bash
 pip install tigramite --upgrade
 ```
+
+## Citation
+
+If you use this work, please cite:
+```
+@mastersthesis{osmanli2025causal,
+  title={Causal Discovery for Predictive Maintenance},
+  author={Osmanli, Ravan and Abdullazada, Anar},
+  school={UFAZ},
+  year={2025}
+}
+```
+
+## License
+
+MIT License
